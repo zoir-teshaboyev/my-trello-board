@@ -1,6 +1,6 @@
+
 const columns = document.querySelectorAll('.column');
 const cards = document.querySelectorAll('.card');
-const remove =document.getElementById('remove') as HTMLDivElement;
 const modal = document.getElementById('modal') as HTMLDivElement;
 const newTaskInput = document.getElementById('new-task-text') as HTMLInputElement;
 let currentColumn: HTMLElement | null = null;
@@ -12,7 +12,6 @@ document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('.card').forEach(card => {
     setupDragEvents(card as HTMLElement);
   });
-
 
   columns.forEach(column => {
     column.addEventListener('dragover', e => {
@@ -29,6 +28,32 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
+function addCard(onclick){
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 function setupDragEvents(card: HTMLElement) {
   card.addEventListener('dragstart', () => {
@@ -41,13 +66,12 @@ function setupDragEvents(card: HTMLElement) {
   });
 }
 
-
+// Modal functions
 function openModal(columnName: string) {
   modal.classList.remove('hidden');
   currentColumn = document.querySelector(`[data-column="${columnName}"]`);
   newTaskInput.value = '';
 }
-
 
 function closeModal() {
   modal.classList.add('hidden');
@@ -66,6 +90,3 @@ function addCard() {
     closeModal();
   }
 }
-
-
-
